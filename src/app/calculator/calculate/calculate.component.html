@@ -1,0 +1,9 @@
+<input type="text" id="left" [value]="myValue" (input) ="$event.target.value"> 
+<input type="text" id="right" [value]="myValue2" (input) ="$event.target.value">
+
+<div>
+<app-add [myLeft]="myValue" [myRight]="myValue2" (result)="onAdd($event)"></app-add>
+</div>
+<div>
+    <h3>Add Result : {{myResultValue}}</h3>
+</div>
