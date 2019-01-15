@@ -1,0 +1,25 @@
+#toolbar{
+    width: 100%;
+    height: 50px;
+    background-color: lightblue;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0,0, 0, .25);
+    display: inline-block;
+    padding: 16px;
+}
+
+a, a:link, a:hover, a:active, a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+.left{
+    display: inline-block;
+    width: 90%;
+}
+
+.right{
+    display: inline-block;
+    width: 10%;
+    
+}
