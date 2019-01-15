@@ -5,7 +5,7 @@ import { AddComponent } from './add/add.component';
 
 @NgModule({
   declarations: [CalculateComponent, AddComponent],
-  exports:[CalculateComponent],
+  exports: [CalculateComponent],
   imports: [
     CommonModule
   ]
