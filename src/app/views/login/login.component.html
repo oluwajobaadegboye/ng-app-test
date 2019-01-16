@@ -18,5 +18,15 @@
       <button type="submit" name="submit" class="submit-button">Login</button>
 
     </form>
+    <div class="failed" *ngIf="userObj.isFailure">
+      <h2>Login Failed: Stay OUT!!</h2>
+    </div>
+    <div class="success" *ngIf="userObj.isSuccess">
+      <h2>WELCOME {{userObj.firstName}} {{userObj.lastName}}</h2>
+    </div>
+
+    <div>
+      <h3>{{(user$ | async).email}}</h3>
+    </div>
   </div>
 </div>

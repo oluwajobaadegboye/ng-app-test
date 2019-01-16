@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  loginUri : 'https://us-central1-pka-forms-fef14.cloudfunctions.net/login',
+  x:'https://us-central1-pka-forms-fef14.cloudfunctions.net/addTimeEntry',
+  v:'https://us-central1-pka-forms-fef14.cloudfunctions.net/setTimeEntry',
+  timeEntryUri:'https://us-central1-pka-forms-fef14.cloudfunctions.net/'
 };
 
 /*

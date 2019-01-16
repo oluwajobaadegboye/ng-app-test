@@ -42,3 +42,11 @@ button{
     margin:32px;
     background-color: blue;
 }
+
+.success{
+    color:green;
+}
+
+.failed{
+    color:red;
+}

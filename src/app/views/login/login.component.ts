@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -9,33 +9,39 @@ import { Subscription } from 'rxjs';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  userObj : User;
-  sub : Subscription;
+  user$: Observable<User>;
+  userObj: User;
+  sub: Subscription;
 
   constructor(private service: AuthService) { }
 
   ngOnInit() {
-    const user$ = this.service.getUserAuth();
-    this.sub = user$.subscribe(userData=>{
-      console.log('Login Subscribed ',userData);
+    this.user$ = this.service.getUserAuth();
+    this.sub = this.user$.subscribe(userData => {
+      console.log('Login Subscribed ', userData);
       this.userObj = userData;
-    })
+    });
   }
 
-  onLoginSubmit(){
-    console.log('Submit',this.userObj);
+  onLoginSubmit() {
+    console.log('Submit', this.userObj);
     this.service.login(this.userObj);
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.sub.unsubscribe();
+
+    // tslint:disable-next-line:no-console
+    console.info('unsubscribeddddddddd');
   }
 }
 
-export interface User{
+export interface User {
   userName?: string;
   password?: string;
   firstName?: string;
   lastName?: string;
   email?: string;
+  isSuccess: boolean;
+  isFailure: boolean;
 }

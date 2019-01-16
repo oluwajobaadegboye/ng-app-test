@@ -1,0 +1,6 @@
+<div id="time-container">
+  <h3>Time Entry System</h3>
+  <div *ngFor="let timeEntry of timeEntries">
+      <app-time-entry-item [aSingleTimeEntry]="timeEntry"></app-time-entry-item>
+  </div>
+</div>

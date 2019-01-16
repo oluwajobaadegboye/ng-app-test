@@ -6,7 +6,7 @@ import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [CalculateComponent, AddComponent],
-  exports:[CalculateComponent],
+  exports: [CalculateComponent],
   imports: [
     CommonModule,
     PipesModule
